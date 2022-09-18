@@ -79,11 +79,8 @@
       <div class="intro-vid">
         <div class="container">
           <div class="col-12">
-            <!-- <video class="img" style="height: 600" controls loop>
-              <source src="./mfiles/videos/ROT_full.mp4" type="video/mp4">
-            </video> -->
             <body>
-              <iframe width="711" height="400" src="https://www.youtube.com/embed/b0xaoHj3IJs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe width="711" height="400" src="https://www.youtube.com/embed/aruVx-Gxc1U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </body>
           </div>
         </div>
@@ -98,7 +95,7 @@
             effective interface for human teachers to demonstrate useful skills to a robot. 
             This challenge is exacerbated in dexterous manipulation, where 
             teaching high-dimensional, contact-rich behaviors often require 
-            esoteric teleoperation tools. In this work, we present HOLO-DEX, 
+            esoteric teleoperation tools. In this work, we present Holo-Dex, 
             a framework for dexterous manipulation that places a teacher in 
             an immersive mixed reality through commodity VR headsets. The 
             high-fidelity hand pose estimator onboard the headset is used to 
@@ -107,7 +104,7 @@
             powerful feature learning combined with non-parametric imitation to 
             train dexterous skills. Our experiments on six common dexterous tasks, 
             including in-hand rotation, spinning, and bottle opening, indicate 
-            that HOLO-DEX can both collect high-quality demonstration data and 
+            that Holo-Dex can both collect high-quality demonstration data and 
             train skills in a matter of hours. Finally,
             we find that our trained skills can exhibit generalization on
             objects not seen in training. 
@@ -116,161 +113,329 @@
       </div>
     </div>
     
-    <!--Image-->
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="center m-bottom">Method</h2>
-          <p><a style="color: #00A2FF; font-weight: bold;"> TODO
-        </div>
-      </div>
-    </div>
-    <!-- <div class="row">
-      <div class="center img">
-        <img src="./mfiles/corl_intro_fig.png" style="max-width:1500px;width:50%" frameborder="0"
-          allowfullscreen></img>
-      </div> -->
-    </div>
-
     <!--Method-->
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <!-- <p>Our main findings can be summarized as:
-          <ul style="font-size: 1.125rem;font-weight: 200;line-height: 1.8">
-            <li>ROT outperforms prior state-of-the-art imitation methods, reaching 90% of expert performance
-              7.8× faster than our strongest baselines on simulated visual control benchmarks.</li>
-            <li>On real-world tasks, with a single human demonstration and an hour of training, ROT achieves
-              an average success rate of 90.1% with randomized robot initialization and image observations.
-              This is significantly higher than behavior cloning (36.1%) and adversarial IRL (14.6%) based
-              approaches.</li>
-            <li>ROT exceeds the performance of state-of-the-art RL trained with rewards, while coming close to
-              methods that augment RL with demonstrations. Unlike standard RL methods, ROT does not require 
-              hand-specification of the reward function.</li>
-            <li>Ablation studies demonstrate the importance of every component in ROT, particularly the role
-              that soft Q-filtering plays in stabilizing training and the need for OT-based rewards during online
-              learning.</li> -->
-          </ul>
-          </p>
+          <h2 class="center m-bottom">Method</h2>
+          <p><a style="color: #00A2FF; font-weight: bold;">Holo-Dex</a> consists of two phases: demonstration collection, which is performed in real-time with visual feedback through the Mixed Reality Interface, and 
+            demonstration-based policy learning, which can learn to solve dexterous tasks from a limited number of demonstrations.
         </div>
       </div>
     </div>
 
+    <!-- Intro Image -->
+    <div class="row">
+      <div class="center img">
+        <img src="./mfiles/Intro.png" style="max-width:1000px;width:60%" frameborder="0"
+          allowfullscreen></img>
+      </div>
+    </div>
+
+    <!-- Demonstrations Heading -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="center m-bottom">Demonstrations</h2> 
+                <p> We collect demonstrations in real-time from multiple RGB-D cameras. We use the VR Headset's hand detector and retarget the human fingertip positions
+                    for the Allegro Hand. The low-level controller uses Inverse Kinematics and Joint retargeting along with PD Control to reach the desired locations in 3D space.
+            </div>
+        </div>
+    </div>
+
+    <!-- Intro Image -->
+    <div class="row">
+        <div class="center img">
+            <img src="./mfiles/Detailed Framework.png" style="max-width:1000px;width:60%" frameborder="0"
+            allowfullscreen></img>
+        </div>
+    </div>
+
+    <br><br><br>
+    
+    <!-- Demonstration Collection GIF -->
+    <div class="row">
+        <div class="center img">
+            <img src="./mfiles/demo-combined.gif" style="max-width:1000px;width:60%" frameborder="0"
+                allowfullscreen></img>
+            <h3 class="center">Demonstration collection for object flipping task</h3>
+        </div>
+    </div>
+
+    
     <div class="container">
       <div class="row">
         <div class="col-12">
           <h2 class="center m-bottom">Robot Results</h2>
-          <!-- <p>We provide evaluation rollouts of ROT on a set of 14 real-world manipulation tasks. With just one demonstration and one hour of
-            online training, ROT achieved an average sucess rate of 90.1% across 14 tasks. This is significantly higher than behavior 
-            cloning (36.1%) and adversarial IRL (14.6%) based approaches.
+          <p>We find that a simple Nearest Neighbors based imitation approach (INN) is sufficient to solve our task. Here we visualize our learned policies on 6 different tasks we consider.
           </p>
         </div>
-        <img class="center" src="./mfiles/gifs/combined_gif_cropped.gif" style="width: 100%;">
-        <br><br>
-        <img class="center" src="./mfiles/robot_exp_combined_cropped.png" style="width:100%;"></img>
-        <img class="center" src="./mfiles/robot_exp_legend.png" style="width:100%;"></img>
-        <!-- <img class="center" src="./mfiles/robot_exp_combined.png" style="width:100%"></img> -->
-        <br><br> -->
-        <!-- <img class="center" src="./mfiles/robot_results.png" style="width:100%"></img> -->
-        <!-- </div> -->
-      </div>
-    </div>
-    <!--Experiments-->
-    <div class="c">
-      <!-- <input type="radio" name="a" id="cr-1">
-      <label for="cr-1" style="--hue: 82"></label>
-      <div class="ci" style="--z: 6">
-        <img src="./mfiles/gifs/diff_starts/eraseboard.gif" alt="Trees">
-      </div>
-    
-      <input type="radio" name="a" id="cr-2">
-      <label for="cr-2" style="--hue: 40"></label>
-      <div class="ci" style="--z: 5">
-        <img src="./mfiles/gifs/diff_starts/knobrotate.gif" alt="Mountains and houses">
-      </div>
-    
-      <input type="radio" name="a" id="cr-3">
-      <label for="cr-3" style="--hue: 210"></label>
-      <div class="ci" style="--z: 4">
-        <img src="./mfiles/gifs/diff_starts/peginsert.gif" alt="Sky and mountains">
-      </div>
 
-      <input type="radio" name="a" id="cr-4">
-      <label for="cr-4" style="--hue: 210"></label>
-      <div class="ci" style="--z: 3">
-        <img src="./mfiles/gifs/diff_starts/hangbag.gif" alt="Sky and mountains">
-      </div>
+        <br><br><br>
 
-      <input type="radio" name="a" id="cr-5">
-      <label for="cr-5" style="--hue: 210"></label>
-      <div class="ci" style="--z: 2">
-        <img src="./mfiles/gifs/diff_starts/boxopen.gif" alt="Sky and mountains">
-      </div>
+        <div class="col-4">
+            <img src="./mfiles/planar-rotation.gif"/>
+            <h3 class="center">Planar Rotation</h3>
+        </div>
+        <div class="col-4">
+            <img src="./mfiles/object-flipping.gif"/>
+            <h3 class="center">Object Flipping</h3>
+        </div>
+        <div class="col-4">
+            <img src="./mfiles/can-spinning.gif"/>
+            <h3 class="center">Can Spinning</h3>
+        </div>
 
-      <input type="radio" name="a" id="cr-6" checked>
-      <label for="cr-6" style="--hue: 32"></label>
-      <div class="ci" style="--z: 1">
-        <img src="./mfiles/gifs/diff_starts/buttonpress.gif" alt="Snow on leafs">
-      </div> -->
-
-    </div>
-    
-    <!-- <div class="container" style="padding-bottom: 40px; padding-top: 0px">
-      <div class="row">
-        <div class="center m-bottom">
-          <h5> ROT performs well across varied start positions </h5>
+        <div class="col-4">
+            <img src="./mfiles/bottle-opening.gif"/>
+            <h3 class="center">Bottle Opening</h3>
+        </div>
+        <div class="col-4">
+            <img src="./mfiles/card-sliding.gif"/>
+            <h3 class="center">Card Sliding</h3>
+        </div>
+        <div class="col-4">
+            <img src="./mfiles/postit-note-sliding.gif"/>
+            <h3 class="center">Postit Note Sliding</h3>
         </div>
       </div>
     </div>
 
-    <div class="d">
-      <input type="radio" name="b" id="dr-1" checked>
-      <label for="dr-1" style="--hue: 32"></label>
-      <div class="di" style="--z: 1">
-        <img src="./mfiles/gifs/diff_starts/failures.gif" alt="Snow on leafs">
-      </div>
-    </div>
 
-    <div class="container" style="padding-bottom: 40px; padding-top: 0px">
-      <div class="row">
-        <div class="center m-bottom">
-          <h5> ROT failure cases </h5>
-        </div>
-      </div>
-    </div> -->
-
-    <!--Experiments-->
+    <!-- Generalization Experiments -->
     <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <!-- <h2 class="center m-bottom">Experiments</h2>
-          <p>To demonstrate the effectiveness of ROT, we run extensive experiments on 20 simulated tasks across
-            DM Control, OpenAI Robotics, and Meta-world, and 14 robotic manipulation tasks on an xArm. For DM Control, we 
-            measure the average episode reward. For OpenAI Robotics, Meta-world and the real-world xArm tasks, we measure the number
-            of successful trajectories. Evaluations are over 10 trajectories for the simulated tasks and 20 trajectories for the 
-            real-world tasks. To reach 90% of expert performance, ROT is on average
-          </p> -->
-          <!-- <h2 class="center m-bottom">Simulation Results</h2>
-          <p>Our experiments on 20 tasks across the DeepMind Control Suite, the OpenAI Robotics Suite, and the Meta-World Benchmark,
-              demonstrate an average of 7.8× faster imitation to reach 90% of expert performance compared to prior state-of-the-art
-              methods. Individually, to reach 90% of expert performance, ROT is on average
-          </p>
-          <ul style="font-size: 1.125rem;font-weight: 200;line-height: 1.8">
-            <li> 8.7× faster on DeepMind Control tasks</li>
-            <img class="center" src="./mfiles/appendix_pixel_results_dmc.png" style="width:100%"></img>
-            <img class="center" src="./mfiles/sim_result_legend.png" style="width:100%;"></img>
-            <li>2.1× faster on OpenAI Robotics tasks</li>
-            <img class="center" src="./mfiles/appendix_pixel_results_fetch.png" style="width:100%"></img>
-            <img class="center" src="./mfiles/sim_result_legend.png" style="width:100%;"></img>
-            <li>8.9× faster on Meta-world tasks</li>
-            <img class="center" src="./mfiles/appendix_pixel_results_metaworld.png" style="width:100%"></img>
-            <img class="center" src="./mfiles/sim_result_legend.png" style="width:100%;"></img>
-          </ul>
-          </p> -->
+        <div class="row">
+          <div class="col-12">
+            <h2 class="center m-bottom">Generalization Experiments</h2>
+            <p>We observed that imitation learning model was able to generalize on sturcturally and visually different objects in all the in-hand manipulation tasks.
+            </p>
+          </div>
         </div>
       </div>
+
+    <!--Planar Rotation Generalization-->
+    <div class="container">
+        <div class="row">
+            <div class="c">
+                <input type="radio" name="a" id="cr-1">
+                <label for="cr-1" style="--hue: 82"></label>
+                <div class="ci" style="--z: 7">
+                    <img src="./mfiles/gifs/diff_starts/eraseboard.gif" alt="Trees">
+                </div>
+                
+                <input type="radio" name="a" id="cr-2">
+                <label for="cr-2" style="--hue: 40"></label>
+                <div class="ci" style="--z: 6">
+                    <img src="./mfiles/gifs/diff_starts/knobrotate.gif" alt="Mountains and houses">
+                </div>
+                
+                <input type="radio" name="a" id="cr-3">
+                <label for="cr-3" style="--hue: 210"></label>
+                <div class="ci" style="--z: 5">
+                    <img src="./mfiles/gifs/diff_starts/peginsert.gif" alt="Sky and mountains">
+                </div>
+
+                <input type="radio" name="a" id="cr-4">
+                <label for="cr-4" style="--hue: 210"></label>
+                <div class="ci" style="--z: 4">
+                    <img src="./mfiles/gifs/diff_starts/hangbag.gif" alt="Sky and mountains">
+                </div>
+
+                <input type="radio" name="a" id="cr-5">
+                <label for="cr-5" style="--hue: 210"></label>
+                <div class="ci" style="--z: 3">
+                    <img src="./mfiles/gifs/diff_starts/boxopen.gif" alt="Sky and mountains">
+                </div>
+
+                <input type="radio" name="a" id="cr-6" checked>
+                <label for="cr-6" style="--hue: 32"></label>
+                <div class="ci" style="--z: 2">
+                    <img src="./mfiles/gifs/diff_starts/buttonpress.gif" alt="Snow on leafs">
+                </div>
+
+                <input type="radio" name="a" id="cr-7" checked>
+                <label for="cr-7" style="--hue: 32"></label>
+                <div class="ci" style="--z: 1">
+                    <img src="./mfiles/gifs/diff_starts/buttonpress.gif" alt="Snow on leafs">
+                </div>
+            </div>
+            <h3 class="center">Generalization observed with unseen objects in Planar Rotation task</h3>
+        </div>
     </div>
 
+    <!--Oject Flipping Generalization-->
+    <div class="container">
+        <div class="row">
+            <div class="d">
+                <input type="radio" name="b" id="dr-1">
+                <label for="dr-1" style="--hue: 82"></label>
+                <div class="di" style="--z: 10">
+                    <img src="./mfiles/gifs/diff_starts/eraseboard.gif" alt="Trees">
+                </div>
+                
+                <input type="radio" name="b" id="dr-2">
+                <label for="dr-2" style="--hue: 40"></label>
+                <div class="di" style="--z: 9">
+                    <img src="./mfiles/gifs/diff_starts/knobrotate.gif" alt="Mountains and houses">
+                </div>
+                
+                <input type="radio" name="b" id="dr-3">
+                <label for="dr-3" style="--hue: 210"></label>
+                <div class="di" style="--z: 8">
+                    <img src="./mfiles/gifs/diff_starts/peginsert.gif" alt="Sky and mountains">
+                </div>
+
+                <input type="radio" name="b" id="dr-4">
+                <label for="dr-4" style="--hue: 210"></label>
+                <div class="di" style="--z: 7">
+                    <img src="./mfiles/gifs/diff_starts/hangbag.gif" alt="Sky and mountains">
+                </div>
+
+                <input type="radio" name="b" id="dr-5">
+                <label for="dr-5" style="--hue: 210"></label>
+                <div class="di" style="--z: 6">
+                    <img src="./mfiles/gifs/diff_starts/boxopen.gif" alt="Sky and mountains">
+                </div>
+
+                <input type="radio" name="b" id="dr-6" checked>
+                <label for="dr-6" style="--hue: 32"></label>
+                <div class="di" style="--z: 5">
+                    <img src="./mfiles/gifs/diff_starts/buttonpress.gif" alt="Snow on leafs">
+                </div>
+
+                <input type="radio" name="b" id="dr-7" checked>
+                <label for="dr-7" style="--hue: 32"></label>
+                <div class="di" style="--z: 4">
+                    <img src="./mfiles/gifs/diff_starts/buttonpress.gif" alt="Snow on leafs">
+                </div>
+
+                <input type="radio" name="b" id="dr-8" checked>
+                <label for="dr-8" style="--hue: 32"></label>
+                <div class="di" style="--z: 3">
+                    <img src="./mfiles/gifs/diff_starts/buttonpress.gif" alt="Snow on leafs">
+                </div>
+
+                <input type="radio" name="b" id="dr-9" checked>
+                <label for="dr-9" style="--hue: 32"></label>
+                <div class="di" style="--z: 2">
+                    <img src="./mfiles/gifs/diff_starts/buttonpress.gif" alt="Snow on leafs">
+                </div>
+
+                <input type="radio" name="b" id="dr-10" checked>
+                <label for="dr-10" style="--hue: 32"></label>
+                <div class="di" style="--z: 1">
+                    <img src="./mfiles/gifs/diff_starts/buttonpress.gif" alt="Snow on leafs">
+                </div>
+            </div>
+            <h3 class="center">Generalization observed with unseen objects in Object Flipping Task</h3>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="d">
+                <input type="radio" name="c" id="er-1">
+                <label for="er-1" style="--hue: 82"></label>
+                <div class="di" style="--z: 9">
+                    <img src="./mfiles/gifs/diff_starts/eraseboard.gif" alt="Trees">
+                </div>
+                
+                <input type="radio" name="c" id="er-2">
+                <label for="er-2" style="--hue: 40"></label>
+                <div class="di" style="--z: 8">
+                    <img src="./mfiles/gifs/diff_starts/knobrotate.gif" alt="Mountains and houses">
+                </div>
+                
+                <input type="radio" name="c" id="er-3">
+                <label for="er-3" style="--hue: 210"></label>
+                <div class="di" style="--z: 7">
+                    <img src="./mfiles/gifs/diff_starts/peginsert.gif" alt="Sky and mountains">
+                </div>
+
+                <input type="radio" name="c" id="er-4">
+                <label for="er-4" style="--hue: 210"></label>
+                <div class="di" style="--z: 6">
+                    <img src="./mfiles/gifs/diff_starts/hangbag.gif" alt="Sky and mountains">
+                </div>
+
+                <input type="radio" name="c" id="er-5">
+                <label for="er-5" style="--hue: 210"></label>
+                <div class="di" style="--z: 5">
+                    <img src="./mfiles/gifs/diff_starts/boxopen.gif" alt="Sky and mountains">
+                </div>
+
+                <input type="radio" name="c" id="er-6" checked>
+                <label for="er-6" style="--hue: 32"></label>
+                <div class="di" style="--z: 4">
+                    <img src="./mfiles/gifs/diff_starts/buttonpress.gif" alt="Snow on leafs">
+                </div>
+
+                <input type="radio" name="c" id="er-7" checked>
+                <label for="er-7" style="--hue: 32"></label>
+                <div class="di" style="--z: 3">
+                    <img src="./mfiles/gifs/diff_starts/buttonpress.gif" alt="Snow on leafs">
+                </div>
+
+                <input type="radio" name="c" id="er-8" checked>
+                <label for="er-8" style="--hue: 32"></label>
+                <div class="di" style="--z: 2">
+                    <img src="./mfiles/gifs/diff_starts/buttonpress.gif" alt="Snow on leafs">
+                </div>
+
+                <input type="radio" name="c" id="er-9" checked>
+                <label for="er-9" style="--hue: 32"></label>
+                <div class="di" style="--z: 1">
+                    <img src="./mfiles/gifs/diff_starts/buttonpress.gif" alt="Snow on leafs">
+                </div>
+            </div>
+            <h3 class="center">Generalization observed with unseen objects in Can Spinning Task</h3>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p>We also observe cases where the policy fails to generalize due to the object being very thin or small in the Planar Rotation and Can Spinning tasks.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="d">
+                <input type="radio" name="d" id="fr-1">
+                <label for="fr-1" style="--hue: 82"></label>
+                <div class="di" style="--z: 9">
+                    <img src="./mfiles/gifs/diff_starts/eraseboard.gif" alt="Trees">
+                </div>
+                
+                <input type="radio" name="d" id="fr-2">
+                <label for="fr-2" style="--hue: 40"></label>
+                <div class="di" style="--z: 8">
+                    <img src="./mfiles/gifs/diff_starts/knobrotate.gif" alt="Mountains and houses">
+                </div>
+                
+                <input type="radio" name="d" id="fr-3">
+                <label for="fr-3" style="--hue: 210"></label>
+                <div class="di" style="--z: 7">
+                    <img src="./mfiles/gifs/diff_starts/peginsert.gif" alt="Sky and mountains">
+                </div>
+
+                <input type="radio" name="d" id="fr-4">
+                <label for="fr-4" style="--hue: 210"></label>
+                <div class="di" style="--z: 6">
+                    <img src="./mfiles/gifs/diff_starts/hangbag.gif" alt="Sky and mountains">
+                </div>
+            </div>
+            <h3 class="center">Failure Cases Observed</h3>
+        </div>
+    </div>
+
+    <br><br>
+    
     <!--Future Work-->
     <!-- <div class="container" style="padding-bottom: 150px; padding-top: 20px">
       <div class="row">
@@ -294,23 +459,6 @@
         </div>
       </div>
     </div> -->
-
-    <div class="row">
-      <div class="col-1 hidden-sm"></div>
-      <div class="col-10">
-        <h2 class="center">Citation</h3>
-        <pre class="code">
-            TODO
-          <!-- @article{haldar2022watch,
-                    title={Watch and Match: Supercharging Imitation with Regularized Optimal Transport},
-                    author={Haldar, Siddhant and Mathur, Vaibhav and Yarats, Denis and Pinto, Lerrel},
-                    journal={CoRL},
-                    year={2022}
-                  }          -->
-        </pre>
-      </div>
-      <div class="col-1 hidden-sm"></div>
-    </div>
 
   </div>
   <footer>
