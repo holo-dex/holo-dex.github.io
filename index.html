@@ -15,9 +15,8 @@
   <meta name="twitter:title" content="Holo-Dex: Teaching Dexterity with Immersive Mixed Reality">
   <meta name="twitter:description"
     content="We propose a new Mixed Reality based framework to collect and deploy imitation learning algorithms for dexterous manipulation.">
-  <!-- <meta name="twitter:image" content="./mfiles/arch bet.001.png" /> -->
-  <link rel="shortcut icon" href="img/favicon.png">
   <link rel="stylesheet" href="css/simple-grid.css">
+
   <title>Holo-Dex: Teaching Dexterity with Immersive Mixed Reality</title>
 </head>
 
@@ -143,7 +142,7 @@
         </div>
     </div>
 
-    <!-- Intro Image -->
+    <!-- Framework Image -->
     <div class="row">
         <div class="center img">
             <img src="./mfiles/Detailed Framework.png" style="max-width:1000px;width:60%" frameborder="0"
@@ -256,11 +255,13 @@
             <h3 class="center">Generalization observed with unseen objects in Planar Rotation task</h3>
         </div>
     </div>
+    
+    <br>
 
     <!--Oject Flipping Generalization-->
     <div class="container">
         <div class="row">
-            <div class="c">
+            <div class="d">
                 <input type="radio" name="b" id="dr-1">
                 <label for="dr-1" style="--hue: 82"></label>
                 <div class="ci" style="--z: 9">
@@ -319,6 +320,8 @@
         </div>
     </div>
 
+    <br>
+
     <!-- Can Spinning Generalization -->
     <div class="container">
         <div class="row">
@@ -332,7 +335,7 @@
                 <input type="radio" name="c" id="er-2">
                 <label for="er-2" style="--hue: 40"></label>
                 <div class="ci" style="--z: 8">
-                    <img src="./mfiles/generalization/can_spinning/cardboard-box.gif" alt="Mountains and houses">
+                    <img src="./mfiles/generalization/can_spinning/body-armor.gif" alt="Mountains and houses">
                 </div>
                 
                 <input type="radio" name="c" id="er-3">
@@ -381,8 +384,8 @@
         </div>
     </div>
 
-    <br><br>
 
+    <!-- Failure -->
     <div class="container">
         <div class="row">
           <div class="col-12">
@@ -390,68 +393,58 @@
             </p>
           </div>
         </div>
-      </div>
+    </div>
 
-      <div class="container">
+
+    <div class="container">
         <div class="row">
             <div class="c">
-                <input type="radio" name="e" id="fr-1">
+                <input type="radio" name="d" id="fr-1">
                 <label for="fr-1" style="--hue: 82"></label>
-                <div class="ci" style="--z: 4">
-                    <img src="./mfiles/generalization/failures/transparent-box.gif" alt="Trees">
+                <div class="ci" style="--z: 9">
+                    <img src="./mfiles/generalization/failures/brown-sponge.gif" alt="Trees">
                 </div>
                 
-                <input type="radio" name="e" id="fr-2">
+                <input type="radio" name="d" id="fr-2">
                 <label for="fr-2" style="--hue: 40"></label>
-                <div class="ci" style="--z: 3">
-                    <img src="./mfiles/generalization/failures/brown-sponge.gif" alt="Mountains and houses">
+                <div class="ci" style="--z: 8">
+                    <img src="./mfiles/generalization/failures/sphere-mould.gif" alt="Mountains and houses">
                 </div>
                 
-                <input type="radio" name="e" id="fr-3">
+                <input type="radio" name="d" id="fr-3">
                 <label for="fr-3" style="--hue: 210"></label>
-                <div class="ci" style="--z: 2">
-                    <img src="./mfiles/generalization/failures/sphere-mould.gif" alt="Sky and mountains">
+                <div class="ci" style="--z: 7">
+                    <img src="./mfiles/generalization/failures/transparent-box.gif" alt="Sky and mountains">
                 </div>
 
-                <input type="radio" name="e" id="fr-4">
+                <input type="radio" name="d" id="fr-4">
                 <label for="fr-4" style="--hue: 210"></label>
-                <div class="ci" style="--z: 1">
+                <div class="ci" style="--z: 6">
                     <img src="./mfiles/generalization/failures/white-board-bottle.gif" alt="Sky and mountains">
                 </div>
+
+                <div class="ci" style="--z: 5">
+                    <img src="./mfiles/generalization/failures/brown-sponge.gif" alt="Sky and mountains">
+                </div>
+
+                <div class="ci" style="--z: 4">
+                    <img src="./mfiles/generalization/failures/brown-sponge.gif" alt="Snow on leafs">
+                </div>
+
             </div>
-            <h3 class="center">Failure Cases Observed</h3>
+            <h3 class="center">Generalization observed with unseen objects in Can Spinning Task</h3>
         </div>
     </div>
 
     <br><br>
-    
-    <!--Future Work-->
-    <!-- <div class="container" style="padding-bottom: 150px; padding-top: 20px">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="center m-bottom">Limitations and Future Work</h2>
-          <p>In this work, we have proposed a new imitation learning algorithm, ROT, that demonstrates improved
-            performance compared to prior state-of-the-art work on a variety of simulated and robotic domains.
-            However, we recognize a few limitations in this work: (a) Since our OT-based approach aligns agents
-            with demonstrations without task-specific rewards, it relies on the demonstrator being an ‘expert’.
-            Extending ROT to suboptimal, noisy and multimodal demonstrations would be an exciting problem to
-            tackle. (b) Performing BC pretraining and BC-based regularization requires access to expert actions,
-            which may not be present in some real-world scenarios particularly when learning from humans.
-            Recent work on using inverse models to infer actions given observational data could alleviate this
-            challenge. (c) On robotic tasks such as Peg in box (hard) and Pressing a switch from Fig. 3, we
-            find that ROT’s performance drops substantially compared to other tasks. This might be due to the
-            lack of visual features corresponding to the task success. For example, in the ‘Peg’ task, it is visually
-            difficult to discriminate if the peg is in the box or behind the box. Similarly for the ‘Switch’ task, it is
-            difficult to discern if the button was pressed or not. This limitation can be addressed by integrating
-            more sensory modalities such as additional cameras, and tactile sensors in the observation space.
-          </p>
-        </div>
-      </div>
-    </div> -->
-
   </div>
   <footer>
   </footer>
+
+  <script>
+
+  </script>
+
 </body>
 
 </html>

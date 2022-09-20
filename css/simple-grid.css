@@ -329,7 +329,6 @@ p {
   border-radius: 12px;
   padding: 20px;
   padding-bottom: 40px;
-  /* box-shadow: 0 8px 48px 2px hsla(10 6% 15% / .4); */
 
   display: flex;
   align-items: flex-end;
@@ -384,7 +383,6 @@ p {
   border-radius: 12px;
   padding: 20px;
   padding-bottom: 40px;
-  /* box-shadow: 0 8px 48px 2px hsla(10 6% 15% / .4); */
 
   display: flex;
   align-items: flex-end;
@@ -442,25 +440,26 @@ input {
 
 label {
   width: 10%;
-  height: 5px;
+  height: 10px;
   margin-right: 4px;
   border-radius: 20px;
+  object-fit: cover;
 
-  background: hsla(0 0% 90% / .3);
+  background: lightblue;
+  /* hsla(0 0% 90% / .3); */
   cursor: pointer;
 
   position: relative;
   z-index: 10;
 }
 
+
 label:last-child {
   margin-right: 0;
 }
 
 input:checked+label {
-  background: linear-gradient(to right,
-    hsla(var(--hue) 80% 70% / .7),
-    hsla(calc(var(--hue) + 30) 80% 50% / .7));
+  background: blue;
 }
 
 input:not(:checked)+label+.ci {
@@ -476,12 +475,25 @@ input:not(:checked)+label+.ci {
   transition: 0;
 }
 
+input:not(:checked)+label+.di {
+  transform: translateX(-100%);
+  opacity: 1;
+}
+
+input:checked+label+.di~.di {
+  transform: translateX(100%);
+} 
+
+input:not(:checked)+label+.di {
+  transition: 0;
+}
+
 
 /* ABS */
 /* ========================================================================== */
 .abs-site-link {
   position: fixed;
-  z-index: 11;
+  z-index: 10;
   bottom: 20px;
   left: 20px;
   color: hsla(32 50% 50% / .8);
