@@ -165,10 +165,47 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h2 class="center m-bottom">Robot Results</h2>
-          <p>We find that a simple Nearest Neighbors based imitation approach (INN) is sufficient to solve our task. Here we visualize our learned policies on 6 different tasks we consider.
+          <h2 class="center m-bottom">Policies</h2>
+          <p>We find that a simple Nearest Neighbors based imitation approach (INN) is sufficient to solve our tasks. At each timestep, the closest example to the current observation is searched in the demonstration dataset. The action associated with that closest example is then executed on the robot.
           </p>
         </div>
+
+        <!-- TODO - add NN videos here -->
+        <div class="col-6">
+            <img src="./mfiles/nns/planar-rotation-train-nn.gif"/>
+        </div>
+        <div class="col-6">
+            <img src="./mfiles/nns/planar-rotation-test-nn.gif"/>
+        </div>
+
+        <h3 class="center">Nearest Neighbors observed in the Planar Rotation task</h3>
+
+        <div class="col-6">
+            <img src="./mfiles/nns/object-flipping-train-nn.gif"/>
+        </div>
+
+        <div class="col-6">
+            <img src="./mfiles/nns/object-flipping-test-nn.gif"/>
+        </div>
+
+        <h3 class="center">Nearest Neighbors observed in the Object Flipping task</h3>
+
+        <div class="col-6">
+            <img src="./mfiles/nns/can-spinning-train-nn.gif"/>
+        </div>
+        <div class="col-6">
+            <img src="./mfiles/nns/can-spinning-test-nn.gif"/>
+        </div>
+
+        <h3 class="center">Nearest Neighbors observed in the Can Spinning task</h3>
+
+
+        <div class="col-12">
+          <h2 class="center m-bottom">Results</h2>
+          <p>Here we visualize our learned policies on 6 different tasks we consider.
+          </p>
+        </div>
+        
 
         <br><br><br>
 
@@ -399,42 +436,49 @@
 
     <div class="container">
         <div class="row">
-            <div class="c">
+            <!-- <div class="c">
                 <input type="radio" name="d" id="fr-1" checked>
                 <label for="fr-1" style="--hue: 82"></label>
-                <!-- <a href="#fr-1"> -->
                   <div class="ci" style="--z: 9">
                       <img src="./mfiles/generalization/failures/brown-sponge.gif">
                   </div>
-                <!-- </a> -->
                 
                 <input type="radio" name="d" id="fr-2">
                 <label for="fr-2" style="--hue: 40"></label>
-                <!-- <a href="#fr-2"> -->
                   <div class="ci" style="--z: 8">
                       <img src="./mfiles/generalization/failures/sphere-mould.gif">
                   </div>
-                <!-- </a> -->
                 
                 <input type="radio" name="d" id="fr-3">
                 <label for="fr-3" style="--hue: 210"></label>
-                <!-- <a href="#fr-3"> -->
                   <div class="ci" style="--z: 7">
                       <img src="./mfiles/generalization/failures/transparent-box.gif">
                   </div>
-                <!-- </a> -->
 
                 <input type="radio" name="d" id="fr-4">
                 <label for="fr-4" style="--hue: 210"></label>
-                <!-- <a href="#fr-4"> -->
                   <div class="ci" style="--z: 6">
                       <img src="./mfiles/generalization/failures/white-board-bottle.gif">
                   </div>
-                <!-- </a> -->
+            </div> -->
 
+            <div class="col-6">
+                <img src="./mfiles/generalization/failures/brown-sponge.gif"/>
             </div>
-            <h3 class="center">Failure cases observed in generalization experiments</h3>
-        </div>
+            <div class="col-6">
+                <img src="./mfiles/generalization/failures/sphere-mould.gif"/>
+            </div>
+            <div class="col-6">
+                <img src="./mfiles/generalization/failures/transparent-box.gif"/>
+            </div>
+    
+            <div class="col-6">
+                <img src="./mfiles/generalization/failures/white-board-bottle.gif"/>
+            </div>
+
+
+          </div>
+          <h3 class="center">Failure cases observed in generalization experiments</h3>
     </div>
 
     <br><br>
