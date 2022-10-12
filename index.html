@@ -166,7 +166,7 @@
       <div class="row">
         <div class="col-12">
           <h2 class="center m-bottom">Policies</h2>
-          <p>We find that a simple Nearest Neighbors based imitation approach (INN) is sufficient to solve our tasks. At each timestep, the closest example to the current observation is searched in the demonstration dataset. The action associated with that closest example is then executed on the robot.
+          <p>We use non-parametric imitation learning (Nearest Neighbors) to optimize our robot policies. At each timestep, the closest example to the current observation is searched in the demonstration dataset. The action associated with that closest example is then executed on the robot.
           </p>
         </div>
 
@@ -201,9 +201,8 @@
 
 
         <div class="col-12">
-          <h2 class="center m-bottom">Results</h2>
-          <p>Here we visualize our learned policies on 6 different tasks we consider.
-          </p>
+          <h3>Here we visualize our learned policies on 6 different tasks we consider.
+          </h3>
         </div>
         
 
@@ -464,21 +463,22 @@
 
             <div class="col-6">
                 <img src="./mfiles/generalization/failures/brown-sponge.gif"/>
+                <p>Failure due to the object having a different color</p>
             </div>
             <div class="col-6">
                 <img src="./mfiles/generalization/failures/sphere-mould.gif"/>
+                <p>Failure due to the object being too thin</p>
             </div>
             <div class="col-6">
                 <img src="./mfiles/generalization/failures/transparent-box.gif"/>
+                <p>Failure due to the object being too thin</p>
             </div>
     
             <div class="col-6">
                 <img src="./mfiles/generalization/failures/white-board-bottle.gif"/>
+                <p>Failure due to the object being small</p>
             </div>
-
-
           </div>
-          <h3 class="center">Failure cases observed in generalization experiments</h3>
     </div>
 
     <br><br>
